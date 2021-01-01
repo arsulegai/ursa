@@ -6,7 +6,7 @@ edition = "2018"
 homepage = "https://crates.io/crates/ursa"
 keywords = ["cryptography", "zero-knowledge"]
 license = "Apache-2.0"
-name = "ursa"
+name = "hyperledger-ursa"
 readme = "README.md"
 repository = "https://github.com/hyperledger/ursa"
 version = "0.5.0"
@@ -33,6 +33,8 @@ members = [
 [features]
 default = ["sharing"]
 sharing = ["ursa_sharing"]
+wrapper = ["ursa"]
 
 [dependencies]
+ursa = { version = "0.3.5", path = "libursa", optional = true, features = ["cl_native"] }
 ursa_sharing = { version = "0.1", path = "ursa_sharing", optional = true }
